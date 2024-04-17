@@ -312,4 +312,147 @@ header {
   color: rgba(255, 255, 255, 0.6);
   line-height: 25px;
   width: 250px;
+}
+
+.services {
+  padding: 70px 70px 50px 70px;
+}
+
+.services-text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  opacity: 0;
+}
+.services-text.anim {
+  opacity: 1;
+  -webkit-animation: showHome 1s both;
+          animation: showHome 1s both;
+}
+.services-text p {
+  color: #F5740E;
+  font-weight: 400;
+}
+.services-text p b {
+  color: black;
+  font-size: 40px;
+}
+.services-text p:nth-of-type(2) {
+  text-align: right;
+  width: 55%;
+  color: rgb(17, 17, 17);
+  font-size: 18px;
+}
+
+.services-display {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  opacity: 0;
+}
+.services-display.anim {
+  opacity: 1;
+  -webkit-animation: showHome 1s both;
+          animation: showHome 1s both;
+}
+
+.services-block {
+  background: #F2F3F3;
+  width: 23%;
+  padding: 40px 0px 0px 40px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+.services-block h2 {
+  font-size: 25px;
+  font-weight: 400;
+}
+.services-block p {
+  margin-right: 25px;
+}
+.services-block button {
+  width: 100%;
+  background: #F5740E;
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #F5740E 0%, #F5740E 51%, white 100%);
+}
+.services-block button:hover {
+  background-position: right center;
+  color: black;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 70px;
+  padding: 50px 70px 50px 70px;
+}
+.price img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 400px;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  gap: 40px;
+}
+.price-block p {
+  color: #F5740E;
+}
+.price-block h2 {
+  margin-top: -30px;
+  font-size: 45px;
+}
+.price-block .price-block__name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0;
+}
+.price-block .price-block__name.anim {
+  opacity: 1;
+  -webkit-animation: showHome 1s both;
+          animation: showHome 1s both;
+}
+.price-block .price-block__name span {
+  width: 55%;
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.2);
+}
+.price-block .price-block__name p {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+.price-block .price-block__name p:nth-of-type(2) {
+  color: rgba(17, 17, 17, 0.7);
+  font-weight: 300;
+}
+.price-block .price-block__name p b {
+  color: black;
 }/*# sourceMappingURL=style.css.map */
