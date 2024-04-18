@@ -16,11 +16,9 @@
               <td bgcolor="#fff" style="padding: 15px;">
                 Пользователь <b>%name%</b> оставил следующее сообщение:
                 <hr>
-                %message%
+                Выбор: <b>%text%</b>
                 <hr>
                 Телефон: <b>%phone%</b>
-                <hr>
-                Email пользователя: <b>%email%</b>
                 <br>
                 Дата отправки: <b>%date%</b>
                 <br>

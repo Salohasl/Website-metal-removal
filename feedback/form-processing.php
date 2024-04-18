@@ -82,34 +82,11 @@ if (!empty($_POST['name'])) {
 if (isset($_POST['phone'])) {
   $data['form']['phone'] = htmlspecialchars($_POST['phone']);
 }
-
-// валидация email
-if (!empty($_POST['email'])) {
-  $data['form']['email'] = $_POST['email'];
-  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    $data['result'] = 'error';
-    $data['errors']['email'] = 'Email не корректный.';
-    itc_log('Email не корректный.');
-  }
-} else {
-  $data['result'] = 'error';
-  $data['errors']['email'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле email.');
+// валидация text
+if (isset($_POST['text'])) {
+  $data['form']['text'] = htmlspecialchars($_POST['text']);
 }
 
-// валидация message
-if (!empty($_POST['message'])) {
-  $data['form']['message'] = htmlspecialchars($_POST['message']);
-  if (mb_strlen($data['form']['message'], 'UTF-8') < 20) {
-    $data['result'] = 'error';
-    $data['errors']['message'] = 'Это поле должно быть не меньше 20 cимволов.';
-    itc_log('Поле message должно быть не меньше 20 cимволов.');
-  }
-} else {
-  $data['result'] = 'error';
-  $data['errors']['message'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле message.');
-}
 
 
 // валидация agree
@@ -134,8 +111,8 @@ require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 if ($data['result'] == 'success' && HAS_SEND_EMAIL == true) {
   // получаем содержимое email шаблона и заменяем в нём
   $template = file_get_contents(dirname(__FILE__) . '/template/email.tpl');
-  $search = ['%subject%', '%name%', '%phone%', '%email%', '%message%', '%date%'];
-  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['phone'], $data['form']['email'], $data['form']['message'], date('d.m.Y H:i')];
+  $search = ['%subject%', '%name%', '%phone%','%text%', '%date%'];
+  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['phone'], $data['form']['text'], date('d.m.Y H:i')];
   $body = str_replace($search, $replace, $template);
   // добавление файлов в виде ссылок
   if (HAS_ATTACH_IN_BODY && count($attachs)) {
@@ -217,8 +194,7 @@ if ($data['result'] == 'success' && HAS_WRITE_TXT) {
   $output = '=======' . date('d.m.Y H:i') . '=======';
   $output .= 'Имя: ' . $data['form']['name'] . PHP_EOL;
   $output .= 'Телефон: ' . isset($data['form']['phone']) ? $data['form']['phone'] : 'не указан' . PHP_EOL;
-  $output .= 'Email: ' . $data['form']['email'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
+  $output .= 'Выбор: ' . $data['form']['text'] . PHP_EOL;
   if (count($attachs)) {
     $output .= 'Файлы:' . PHP_EOL;
     foreach ($attachs as $attach) {
