@@ -1,5 +1,34 @@
-const animTexts = document.querySelectorAll('.animText');
+/* Для всплывающего окна */ 
+let menuBtn = document.querySelector('.menuBtn');
+let menu = document.querySelector('nav');
+let link = document.querySelector('.link');
+menuBtn.addEventListener('click', () =>{
+menuBtn.classList.toggle('active');
+menu.classList.toggle('popUp');
+});
+document.addEventListener('click', function(event) {
+    // Проверяем, что клик произошел вне меню и кнопки открытия
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+        // Закрываем меню, добавляя класс, который изменяет его видимость или другие свойства
+        menu.classList.remove('popUp');
+        menuBtn.classList.remove('active');
+    }
+});
 
+
+function showScrollUp(){
+  const upBtn = document.querySelector('.up');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 100){
+      upBtn.classList.add('active');
+    }else{
+      upBtn.classList.remove('active');
+    }
+  })
+}
+showScrollUp();
+
+const animTexts = document.querySelectorAll('.animText');
 const observerCallback = (entries, observer) => {
  entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -25,8 +54,6 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-
-
 
 const containerTwo = document.querySelector('.containerTwo');
 function showForm(){

@@ -26,6 +26,85 @@ body {
   background: white;
 }
 
+.menuBtn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.menuBtn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menuBtn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.menuBtn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 1%;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  right: 20px;
+  background-color: #F5740E;
+  padding-left: 23px;
+}
+
+.hr {
+  display: none;
+}
+
+.menuBtn span {
+  width: 24px;
+  height: 3px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  transition: all 0.5s;
+  border-radius: 2px;
+}
+
+.menuBtn span:nth-of-type(2) {
+  top: calc(40% - 5px);
+}
+
+.menuBtn span:nth-of-type(3) {
+  top: calc(55% + 5px);
+}
+
+.up {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.5s;
+}
+.up button {
+  background-color: #F5740E;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  color: white;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.up button:hover {
+  background-color: #111111;
+}
+.up.active {
+  opacity: 1;
+}
+
 header {
   background-image: url(/img/fonHeader.png);
   background-repeat: no-repeat;
@@ -382,6 +461,7 @@ header {
 }
 .services-block button {
   width: 100%;
+  border-radius: 10px;
   background: #F5740E;
   color: white;
   border: none;
@@ -518,6 +598,7 @@ header {
   color: white !important;
   padding: 30px;
   transition: 0.5s;
+  border-radius: 10px;
 }
 .swiper-button-next:hover, .swiper-button-prev:hover {
   background-color: rgb(17, 17, 17);

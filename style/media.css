@@ -1,0 +1,289 @@
+@media only screen and (max-width:1260px){ 
+    
+  }
+  
+  @media only screen and (max-width:992px){
+    nav{
+      display: none;
+    }
+
+    .menuBtn{
+      display: flex;
+      z-index: 105;
+    }
+     nav.popUp{
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items:flex-start;
+      background-color: white;
+      position: fixed;
+      padding-top: 2%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 45vw;
+      animation-duration: 0.55s;  /* Время работы анимации */
+      animation-fill-mode: both;  /* Поведение анимации */
+      animation-name: fadeInDown;/* Имя анимации */
+    } 
+    .header-link ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 30%;
+      padding: 0;
+
+    }
+    .header-link li{
+      color: black;
+      font-size: 25px;
+      margin-left: 40px;
+    }
+    .header-link li:hover {
+        color:#F5740E;
+      }
+    .hr{
+        display: block;
+        width: 100vw;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    @keyframes fadeInDown { /* Сама анимация */
+      0% {                /* Старт анимации */
+          opacity: 0;
+          transform: translate3d(100%, 0px, 0px);
+      }
+      100% {              /* в финале анимации - финал это заданная 0.55s */
+          opacity: 1;
+          transform: none;
+      }
+    }
+    .header-link {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .header-link .tel {
+        margin-right: 0px;
+        margin-left: 70px;
+      }
+    .main-top{
+        flex-direction: column;
+    }
+    .main-top hr{
+        width: 100vw;
+        height: auto;
+    }
+    .about{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .about img{
+        display: none;
+    }
+    .about .about-text{
+        align-items: center;
+        text-align: center;
+    }
+    .services-text{
+        flex-wrap: wrap;
+    }
+    .services-text p:nth-of-type(2), .reviews-text p:nth-of-type(2){
+        width: 100%;
+        text-align: left;
+    }
+    .services-display{
+        justify-content: center;
+        gap: 40px;
+    }
+    .services-block{
+        width: 300px;
+    }
+    .price img {
+        display: none;
+    }
+    .reviews-text{
+        flex-wrap: wrap;
+    }
+    .containerTwo{
+       margin-top: 100px;
+       margin-bottom: 100px;
+    }
+    .container, .containerTwo{
+        width: 50%;
+    }
+    .footer-top{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .footer-top .messenger{
+        gap: 50px;
+    }
+    .footer-bottom{
+        flex-direction: row-reverse;
+        align-items: flex-end;
+    }
+  }
+
+
+
+
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+    .footer-bottom{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 50px;
+    }
+    .swiper-button-prev{
+        margin-left: -10px;
+        margin-top: -35px !important;
+    }
+    .swiper-button-next{
+        margin-right: -10px;
+        margin-top: -35px !important;
+    }
+    .swiper-slide img{
+        width: 82%;
+    }
+    .services-block{
+        width: 90%;
+    }
+    .advantage{
+        align-items: center;
+        justify-content: center;
+    }
+    .header-block__button a button{
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .header-block h2{
+        width: 100%;
+        font-size: 40px;
+    }
+    .header-block__text p{
+        width: 100%;
+    }
+  }
+
+
+
+  /* МОБИЛКА*/
+  @media only screen and (max-width:570px){  
+    .header-block {
+        margin: 150px 20px 0px 20px;
+      }
+      .header-link .logo{
+        margin-left: 20px;
+      }
+      .header-link .tel {
+        margin-left: 20px;
+      }
+      nav.popUp{
+        width: 100vw;
+      }
+      .main-top{
+        padding: 0px 20px 0px 20px;
+      }
+      .main-top h3{
+        width: 90%;
+      }
+      .about{
+        padding: 90px 20px 270px 20px;
+      }
+      .advantage{
+        margin: -150px 20px 0px 20px;
+      }
+      .services{
+        padding: 70px 20px 50px 20px;
+      }
+      .services-text{
+        gap: 20px;
+      }
+      .services-block{
+        width: 100%;
+      }
+      .containerTwo{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        z-index: 200 !important;
+     }
+     .container, .containerTwo{
+         width: 100%;
+     }
+     .price {
+        padding: 50px 20px 50px 20px;
+      }
+      .reviews {
+        padding: 70px 20px 50px 20px;
+      }
+      .swiper-slide img{
+        width: 100%;
+        margin: 0;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        background-color: rgb(17, 17, 17, 0);
+        color: #F5740E !important;
+        transition: 0.5s;
+        border-radius: 10px;
+        margin-left: -30px;
+        margin-right: -30px;
+      }
+      .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: rgb(17, 17, 17, 0);
+      }
+      footer {
+        padding: 70px 20px 40px 20px;
+      }
+      .footer-top{
+        gap: 20px;
+      }
+      .footer-top a {
+        font-size: 30px;
+      }
+      header{
+        background-position:50%;
+      }
+      .containerTwo{
+        overflow: scroll;
+      }
+      .services-display{
+        opacity: 1;
+      }
+  }
+  @media only screen and (max-width:400px){
+    .reviews-text p b, .services-text p b {
+        font-size: 30px;
+      }
+      .reviews-text {
+        gap: 20px;
+      }
+      .price-block h2 {
+        font-size: 30px;
+      }
+      .about .about-text h2 {
+        font-size: 30px;
+      }
+      .price-block .price-block__name span {
+        display: none;
+    }   
+
+    .header-block__text{
+        display: none;
+    }
+    .header-link .logo p{
+        font-size: 17px;
+    }
+  }
+  @media only screen and (max-width:320px){
+    .close{
+        top: 50px;
+    }
+  } 
+  

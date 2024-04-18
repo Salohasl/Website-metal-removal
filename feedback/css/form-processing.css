@@ -635,6 +635,7 @@ button[type="submit"] {
   color: white;
   border: none;
   font-size: 22px;
+  border-radius: 10px;
   width:100%;
   padding: 25px;
   cursor: pointer;
